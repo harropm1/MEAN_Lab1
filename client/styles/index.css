@@ -55,7 +55,7 @@
 }
 
 .image-container {
-  background-image: url("/images/header3.jpg"); /* The image used - important! */
+  background-image: url("../images/header3.jpg"); /* The image used - important! */
   background-size: cover; 
   position: relative; /* Needed to position the cutout text in the middle of the image */
   height: 600px; /* Some height */

@@ -19,7 +19,7 @@ $(function ()
 
     /* when the user clicks the sign me up button, it calls the function sendMemberInfo */
     $("#signMeUp").on("click", sendMemberInfo);
-    $("#cancel").prop("href", "details.html?teamId=" + teamId);
+    $("#cancel").prop("href", "details.php?teamId=" + teamId);
 });
 
 /* This function validates and sends the new member's info.
@@ -38,7 +38,7 @@ function sendMemberInfo()
     * 2. It then validates if the new member can be added to the team, with no age discrepancies or gender discrepancies.
     */
     let teamInfo;
-    $.getJSON("https://localhost:8081/api/teams/" + teamId, function (data)
+    $.getJSON("http://localhost:8081/api/teams/" + teamId, function (data)
     {
         //see 1 above
         teamInfo = data;
@@ -54,14 +54,14 @@ function sendMemberInfo()
             return;
         }
         //sends the member info
-        $.post("/https://localhost:8081/api/teams/" + teamId + "/members", $("#signupForm").serialize(), function (data)
+        $.post("http://localhost:8081/api/teams/" + teamId + "/members", $("#signupForm").serialize(), function (data)
         {
             $("#errorMessages").empty();
             $("#msgDiv").html("Thanks for volunteering!");
             $("#signMeUp").prop("disabled", true);
             $("#cancel").hide();
             $("#backToDetails").show();
-            $("#backToDetails").prop("href", "details.html?teamId=" + teamId);
+            $("#backToDetails").prop("href", "details.php?teamId=" + teamId);
         });
     });
 }

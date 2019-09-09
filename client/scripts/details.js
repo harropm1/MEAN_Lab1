@@ -16,24 +16,24 @@ $(function ()
 
     //see 1 above
     let teamInfo;
-    $.getJSON("https://localhost:8081/api/teams/" + teamId, function (data)
+    $.getJSON("http://localhost:8081/api/teams/" + teamId, function (data)
     {
         teamInfo = data;
         insertData(teamInfo);
         insertMemberTable(teamInfo);
 
-        $("#signUp").prop("href", "signup.html?teamId=" + teamInfo.TeamId);
+        $("#signUp").prop("href", "signup.php?teamId=" + teamInfo.TeamId);
     });
 
     //see 2 above
     $("#backToTeams").on("click", function ()
     {
-        $("#backToTeams").prop("href", "search.html");
+        $("#backToTeams").prop("href", "search.php");
     });
 
     $("#editTeam").on("click", function()
     {
-        $("#editTeam").prop("href", "editteaminfo.html?teamId=" + teamInfo.TeamId);
+        $("#editTeam").prop("href", "editteaminfo.php?teamId=" + teamInfo.TeamId);
     });
 
 });
