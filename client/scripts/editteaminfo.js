@@ -21,7 +21,7 @@ $(function ()
 
     //see 1a and 1b above
     let teamInfo;
-    $.getJSON("https://localhost:8081/api/teams/" + teamId, function (data)
+    $.getJSON("http://localhost:8081/api/teams/" + teamId, function (data)
     {
         teamInfo = data;
 
@@ -46,7 +46,7 @@ $(function ()
         //see 2b above
         $.ajax(
             {
-                url: '/https://localhost:8081/api/teams',
+                url: '/http://localhost:8081/api/teams',
                 method: 'PUT',
                 data: `teamid=${teamId}&${$("#editTeamForm").serialize()}`,
                 //this is "success" because for some reason, "done" does not work for me
@@ -58,7 +58,7 @@ $(function ()
                     $("#cancel").hide();
                     $("#areYouSure").hide();
                     $("#toTeamDetails").show();
-                    $("#toTeamDetails").prop("href", "details.html?teamId=" + teamId);
+                    $("#toTeamDetails").prop("href", "details.php?teamId=" + teamId);
                 },
                 //this is "error" because for some reason, "fail" does not work for me
                 error: function ()
@@ -73,7 +73,7 @@ $(function ()
     {
         $.ajax(
             {
-                url: '/https://localhost:8081/api/teams/' + teamId,
+                url: '/http://localhost:8081/api/teams/' + teamId,
                 method: 'DELETE',
                 //this is "success" because for some reason, "done" does not work for me
                 success: function () 
@@ -83,7 +83,7 @@ $(function ()
                 //this is "error" because for some reason, "fail" does not work for me
                 error: function ()
                 {
-                    location.href = `editteaminfo.html?teamId=${teamId}`;
+                    location.href = `editteaminfo.php?teamId=${teamId}`;
                 }
             });
     });
@@ -91,7 +91,7 @@ $(function ()
     //see 4 above
     $("#cancel").on("click", function ()
     {
-        location.href = `details.html?teamId=${teamId}`;
+        location.href = `details.php?teamId=${teamId}`;
     });
 });
 
@@ -103,7 +103,7 @@ function addTeamDetailsToPage(team)
 {
     /* generates the location dropdown */
     let league;
-    $.getJSON("https://localhost:8081/api/leagues", function (data)
+    $.getJSON("http://localhost:8081/api/leagues", function (data)
     {
         league = data;
         for (let i = 0; i < league.length; i++)
@@ -165,11 +165,11 @@ function insertMemberTable(team)
 
             $(`#remove${memberId}`).on("click", function ()
             {
-                location.href = "editmember.html?teamId=" + team.TeamId + "&memberId=" + memberId;
+                location.href = "editmember.php?teamId=" + team.TeamId + "&memberId=" + memberId;
             });
             $(`#edit${memberId}`).on("click", function()
             {
-                location.href = "editmember.html?teamId=" + team.TeamId + "&memberId=" + memberId;
+                location.href = "editmember.php?teamId=" + team.TeamId + "&memberId=" + memberId;
             })
         }
     }

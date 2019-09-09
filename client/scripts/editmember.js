@@ -21,7 +21,7 @@ $(function ()
 
     //see 1 above
     let memberInfo;
-    $.getJSON("/https://localhost:8081/api/teams/" + teamId + "/members/" + memberId, function (data)
+    $.getJSON("http://localhost:8081/api/teams/" + teamId + "/members/" + memberId, function (data)
     {
         memberInfo = data;
         addMemberDetailsToPage(memberInfo);
@@ -32,17 +32,17 @@ $(function ()
     {
         $.ajax(
             {
-                url: "/https://localhost:8081/api/teams/" + teamId + "/members/" + memberId,
+                url: "http://localhost:8081/api/teams/" + teamId + "/members/" + memberId,
                 method: 'DELETE',
                 //this is "success" because for some reason, "done" does not work for me
                 success: function () 
                 {
-                    location.href = `details.html?teamId=${teamId}`;
+                    location.href = `details.php?teamId=${teamId}`;
                 },
                 //this is "error" because for some reason, "fail" does not work for me
                 error: function ()
                 {
-                    location.href = `editmember.html?teamId=${teamId}&memberId=${memberId}`;
+                    location.href = `editmember.php?teamId=${teamId}&memberId=${memberId}`;
                 }
             });
     });
@@ -64,7 +64,7 @@ $(function ()
         //see 3b above
         $.ajax(
             {
-                url: "/https://localhost:8081/api/teams/" + teamId + "/members",
+                url: "http://localhost:8081/api/teams/" + teamId + "/members",
                 method: 'PUT',
                 data: `memberid=${memberId}&${$("#editMemberForm").serialize()}`,
                 //this is "success" because for some reason, "done" does not work for me
@@ -76,7 +76,7 @@ $(function ()
                     $("#areYouSure").hide();
                     $("#cancel").hide();
                     $("#backToDetails").show();
-                    $("#backToDetails").prop("href", "details.html?teamId=" + teamId);
+                    $("#backToDetails").prop("href", "details.php?teamId=" + teamId);
                 },
                 //this is "error" because for some reason, "fail" does not work for me
                 error: function ()
@@ -89,7 +89,7 @@ $(function ()
     //see 4 above
     $("#cancel").on("click", function ()
     {
-        location.href = `details.html?teamId=${teamId}`;
+        location.href = `details.php?teamId=${teamId}`;
     });
 });
 

@@ -11,7 +11,7 @@ $(function ()
     let leagues;
     
     //see 1 above
-    $.getJSON("/https://localhost:8081/api/leagues", function (data)
+    $.getJSON("http://localhost:8081/api/leagues", function (data)
     {
         leagues = data;
         for (let i = 0; i < leagues.length; i++)
@@ -27,7 +27,7 @@ $(function ()
     //see 3 above
     $("#cancel").on("click", function ()
     {
-        document.location.href = "search.html";
+        document.location.href = "search.php";
     });
 })
 
@@ -42,7 +42,7 @@ function createTeam()
     }
 
     //this is the post request to add the team into the array of teams
-    $.post("/https://localhost:8081/api/teams", $("#newteamForm").serialize(), function(data)
+    $.post("http://localhost:8081/api/teams", $("#newteamForm").serialize(), function(data)
     {
         data = JSON.parse(data);
         
@@ -52,7 +52,7 @@ function createTeam()
         $("#cancel").hide();
         $("#backToSearch").show();
         $("#toTeamDetails").show();
-        $("#backToSearch").prop("href", "search.html");
-        $("#toTeamDetails").prop("href", "details.html?teamId=" + data.TeamId);
+        $("#backToSearch").prop("href", "search.php");
+        $("#toTeamDetails").prop("href", "details.php?teamId=" + data.TeamId);
     })
 }

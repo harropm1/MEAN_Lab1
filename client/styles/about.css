@@ -5,7 +5,7 @@ main {
 
 .slide1 {
     /* The image used */
-    background-image: url("/images/p-food.jpg");
+    background-image: url("../images/p-food.jpg");
     
     /* Set a specific height */
     height: 500px; 
@@ -18,7 +18,7 @@ main {
 }
 .slide2 {
     /* The image used */
-    background-image: url("/images/p-playgrounds.jpg");
+    background-image: url("../images/p-playgrounds.jpg");
     
     /* Set a specific height */
     height: 500px; 
@@ -31,7 +31,7 @@ main {
 }
 .slide3 {
     /* The image used */
-    background-image: url("/images/p-trails.jpg");
+    background-image: url("../images/p-trails.jpg");
     
     /* Set a specific height */
     height: 500px; 
@@ -44,7 +44,7 @@ main {
 }
 .slide4 {
     /* The image used */
-    background-image: url("/images/p-westmoor.jpg");
+    background-image: url("../images/p-westmoor.jpg");
     
     /* Set a specific height */
     height: 500px; 
@@ -57,7 +57,7 @@ main {
 }
 .slide5 {
     /* The image used */
-    background-image: url("/images/p-library.jpg");
+    background-image: url("../images/p-library.jpg");
     
     /* Set a specific height */
     height: 500px; 

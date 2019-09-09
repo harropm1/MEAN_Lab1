@@ -15,7 +15,7 @@ $(function ()
     $("#addTeam").hide();
 
     //see 1 above
-    $.getJSON("https://localhost:8081/api/leagues", function (data)
+    $.getJSON("http://localhost:8081/api/leagues", function (data)
     {
         league = data;
         for (let i = 0; i < league.length; i++)
@@ -39,7 +39,7 @@ $(function ()
         {
             $("thead").show();
             $("#addTeam").show();
-            $.getJSON("/https://localhost:8081/api/teams/byleague/" + $("#locationSelect").val(), function (data)
+            $.getJSON("http://localhost:8081/api/teams/byleague/" + $("#locationSelect").val(), function (data)
             {
                 teams = data;
                 $("#tableBody").empty();
@@ -54,7 +54,7 @@ $(function ()
     {
         $("thead").show();
         $("#addTeam").show();
-        $.getJSON("/https://localhost:8081/api/teams", function (data)
+        $.getJSON("http://localhost:8081/api/teams", function (data)
         {
             allTeams = data;
             $("#tableBody").empty();
@@ -65,7 +65,7 @@ $(function ()
     //see 4 above
     $("#addTeam").on("click", function ()
     {
-        $("#addTeam").prop("href", "newteam.html");
+        $("#addTeam").prop("href", "newteam.php");
     });
 });
 
@@ -89,13 +89,13 @@ function createSearchByLocationTable(teamsList)
 */
 function insertTableData(team)
 {
-    $.getJSON("/https://localhost:8081/api/leagues/" + team.League, function (data)
+    $.getJSON("http://localhost:8081/api/leagues/" + team.League, function (data)
     {
         let league = data;
         let rowBeingEntered = "<tr><td>" + league.Name +
             "</td><td>" + team.TeamName +
             "</td><td>" + team.ManagerName +
-            "</td><td><a target='_self' href='details.html?teamId=" + team.TeamId +
+            "</td><td><a target='_self' href='details.php?teamId=" + team.TeamId +
             "'>Details</a></td></tr>";
 
         $("#tableBody").append(rowBeingEntered);

@@ -2,48 +2,15 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <!--My favicon, font, and css-->
-    <link rel="icon" href="images/hands-favicon.png">
-    <link rel="stylesheet" href="styles/site.css">
+    <?php $title = "Sign Up" ?>
+    <?php include("inc/head.php"); ?>
     <link rel="stylesheet" href="styles/signup.css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-
-    <title>West Hartford Cares</title>
 </head>
 
 <body>
-    <!--nav bar-->
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
-        <a class="navbar-brand" href="index.html">Home</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
-            aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarToggler">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="search.html">Look for Volunteer Opportunities</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <?php include("inc/navbar.php"); ?>
 
-    <!--header-->
-    <header>
-        <h1 class="display-4 text-center">West Hartford Cares</h1>
-    </header>
-
+    <?php include("inc/header.php"); ?>
     
     <main>
         <div class="container">
@@ -115,23 +82,9 @@
             </form>
         </div>
     </main>
-
-    <!--footer-->
-    <footer class="text-right">
-        <hr>
-        <p>West Hartford Cares was created by Michelle Harrop as part of HartCode 2019.</p>
-    </footer>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-
+    
+    <?php include("inc/footer.php"); ?>
+    <?php include("inc/scriptsinclude.php"); ?>
     <!--My JavaScript-->
     <script src="scripts/validate.js"></script>
     <script src="scripts/signup.js"></script>
